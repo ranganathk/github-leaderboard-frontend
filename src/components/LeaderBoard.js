@@ -9,22 +9,6 @@ export default class LeaderBoard extends Component {
     };
   }
 
-  // renderTeamData = data => {
-  //   const teamData = {
-  //     commits: 0,
-  //     additions: 0,
-  //     deletions: 0
-  //   };
-
-  //   data.forEach(item => {
-  //     teamData.commits += item.stats.commits || 0;
-  //     teamData.additions += item.stats.additions || 0;
-  //     teamData.deletions += item.stats.deletions || 0;
-  //   });
-
-  //   return teamData;
-  // };
-
   sortLeaderBoardData = (data, type, order) => {
     return data.sort((item1, item2) => {
       if (!item1.stats[type] && !item2.stats[type]) {
