@@ -46,6 +46,7 @@ export default function User({ profile, stats }) {
       <a href={profile.html_url}>
         <img
           src={profile.avatar_url}
+          alt="avatar"
           className="img-circle"
           style={styles.img}
         />
@@ -68,6 +69,19 @@ export default function User({ profile, stats }) {
     </div>
   );
 }
+
+User.propTypes = {
+  profile: PropTypes.shape({
+    avatar_url: PropTypes.string.isRequired,
+    html_url: PropTypes.string.isRequired,
+    login: PropTypes.string.isRequired
+  }).isRequired,
+  stats: PropTypes.shape({
+    commits: PropTypes.number,
+    additions: PropTypes.number,
+    deletions: PropTypes.number
+  }).isRequired
+};
 
 // profile: {
 //   login: "sundarcodes",
