@@ -3,7 +3,10 @@ import './bootstrap-social.css';
 import './App.css';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import AddToken from './components/AddToken';
+import Header from './components/Header';
 import DataService from './services/dataService';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
@@ -31,11 +34,29 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.loggedIn ? (
-          <Dashboard logoutUser={this.logoutUser} data={this.state.data} />
-        ) : (
-          <Login />
-        )}
+        {this.state.loggedIn && <Header logoutUser={this.logoutUser} />}
+        <BrowserRouter>
+          <Switch>
+            {this.state.loggedIn ? (
+              <Route
+                path="/"
+                exact={true}
+                render={props => (
+                  <Dashboard
+                    logoutUser={this.logoutUser}
+                    data={this.state.data}
+                    {...props}
+                  />
+                )}
+              />
+            ) : (
+              <Route path="/" exact={true} component={Login} />
+            )}
+            {this.state.loggedIn && (
+              <Route path="/add-token" component={AddToken} />
+            )}
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
