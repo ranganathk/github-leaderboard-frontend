@@ -18,9 +18,10 @@ export default class DataService {
 
   static getData = async () => {
     const token = DataService.isLoggedIn();
+    const headers = { token };
     const url = `${BACKEND_URL}/github/getAllStats`;
     // const url = `${BACKEND_URL}${token}`;
-    return await axios.get(url);
+    return await axios.get(url, { headers });
   };
 
   static sendOrganizationToken = async token => {
