@@ -34,28 +34,32 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.loggedIn && <Header logoutUser={this.logoutUser} />}
         <BrowserRouter>
-          <Switch>
-            {this.state.loggedIn ? (
+          <div className="container">
+            {this.state.loggedIn && (
               <Route
-                path="/"
-                exact={true}
                 render={props => (
-                  <Dashboard
-                    logoutUser={this.logoutUser}
-                    data={this.state.data}
-                    {...props}
-                  />
+                  <Header logoutUser={this.logoutUser} {...props} />
                 )}
               />
-            ) : (
-              <Route path="/" exact={true} component={Login} />
             )}
-            {this.state.loggedIn && (
-              <Route path="/add-token" component={AddToken} />
-            )}
-          </Switch>
+            <Switch>
+              {this.state.loggedIn ? (
+                <Route
+                  path="/"
+                  exact={true}
+                  render={props => (
+                    <Dashboard data={this.state.data} {...props} />
+                  )}
+                />
+              ) : (
+                <Route path="/" exact={true} component={Login} />
+              )}
+              {this.state.loggedIn && (
+                <Route path="/add-token" component={AddToken} />
+              )}
+            </Switch>
+          </div>
         </BrowserRouter>
       </div>
     );

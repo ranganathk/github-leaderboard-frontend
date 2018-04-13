@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const BACKEND_URL = 'https://87362fcb.ngrok.io/github/getAllStats?userToken=';
-const BACKEND_URL = 'https://summer-sea-929.getsandbox.com/getAllStats';
+const BACKEND_URL = 'https://summer-sea-929.getsandbox.com';
 const TOKEN_NAME = 'githubAccessToken';
 
 export default class DataService {
@@ -18,7 +18,14 @@ export default class DataService {
 
   static getData = async () => {
     const token = DataService.isLoggedIn();
-    const url = BACKEND_URL;
+    const url = `${BACKEND_URL}/getAllStats`;
     return await axios.get(url);
+  };
+
+  static sendOrganizationToken = async token => {
+    const url = `${BACKEND_URL}/saveToken`;
+    return await axios.post(url, {
+      token
+    });
   };
 }
