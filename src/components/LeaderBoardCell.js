@@ -10,7 +10,7 @@ const styles = {
 const LeaderBoardCell = props => (
   <tr className="even gradeC" key={props.login}>
     <td>
-      <img src={props.avatar} style={styles.avatar} />
+      <img src={props.avatar} style={styles.avatar} alt="" />
     </td>
     <td>{props.name}</td>
     <td>

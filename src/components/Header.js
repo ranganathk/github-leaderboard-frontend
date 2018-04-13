@@ -8,13 +8,13 @@ export default class Header extends Component {
   }
   logout() {
     this.props.history.push('/');
-    this.props.logoutUser;
+    this.props.logoutUser();
   }
   render() {
     return (
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             My Scorer
           </a>
           <ul
@@ -26,7 +26,6 @@ export default class Header extends Component {
                 className="nav-link dropdown-toggle"
                 href="#"
                 id="navbarDropdown"
-                role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"

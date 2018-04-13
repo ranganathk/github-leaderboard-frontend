@@ -19,6 +19,7 @@ export default class DataService {
   static getData = async () => {
     const token = DataService.isLoggedIn();
     const url = `${BACKEND_URL}/getAllStats`;
+    // const url = `${BACKEND_URL}${token}`;
     return await axios.get(url);
   };
 
