@@ -1,3 +1,7 @@
+body {
+  background-color: #1d263b;
+}
+
 .App {
   text-align: center;
 }
@@ -29,4 +33,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #f6fdfc;
+}
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th {
+  background-color: #edfbf9;
+}
+
+.table > tbody > tr > td {
+  border: none;
 }

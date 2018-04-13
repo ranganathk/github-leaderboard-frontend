@@ -9,10 +9,18 @@ const LEADER_TYPE_COMMITS = 'commits';
 // const LEADER_TYPE_RECENTLY_ADDED = 'recentlyAdded';
 // const ORGANIZATION_TOTAL_RECENTLY_ADDED_COLOR = 'green';
 
+const styles = {
+  rowContainer: {
+    marginBottom: '60px',
+    display: 'flex',
+    justifyContent: 'center'
+  }
+};
+
 export default class Topbar extends Component {
   render() {
     return (
-      <div className="row">
+      <div className="row" style={styles.rowContainer}>
         <TopbarItem
           color={ORGANIZATION_TOTAL_ADDITIONS_COLOR}
           type={LEADER_TYPE_ADDITIONS}

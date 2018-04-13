@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import LeaderBoardCell from './LeaderBoardCell';
 
+const styles = {
+  header: {
+    fontSize: '24px',
+    fontWeight: '500',
+    color: '#333',
+    backgroundColor: 'rgba(173, 188, 204, 0.3)'
+  },
+  panel: {
+    border: '0px'
+  }
+};
 export default class LeaderBoard extends Component {
   constructor(props) {
     super(props);
@@ -38,27 +49,30 @@ export default class LeaderBoard extends Component {
   render() {
     return (
       <div className="row">
-        <div className="panel panel-default">
-          <div className="panel-heading">{this.props.type}</div>
-          <div className="panel-body">
-            <table
-              width="100%"
-              className="table table-striped table-bordered table-hover"
-              id="dataTables-example"
-            >
-              <tbody>
-                {this.state.sortedData.map(item => (
-                  <LeaderBoardCell
-                    avatar={item.profile.avatar_url}
-                    name={item.profile.login}
-                    value={item.stats[this.props.type]}
-                    label={this.props.type}
-                    key={item.profile.login}
-                  />
-                ))}
-              </tbody>
-            </table>
+        <div className="panel panel-default" style={styles.panel}>
+          <div className="panel-heading" style={styles.header}>
+            {this.props.type.toUpperCase()}
           </div>
+          {/* <div className="panel-body"> */}
+          <table
+            width="100%"
+            className="table table-striped table-hover"
+            id="dataTables-example"
+          >
+            <tbody>
+              {this.state.sortedData.map((item, index) => (
+                <LeaderBoardCell
+                  avatar={item.profile.avatar_url}
+                  name={item.profile.login}
+                  value={item.stats[this.props.type]}
+                  label={this.props.type}
+                  key={item.profile.login}
+                  rank={index}
+                />
+              ))}
+            </tbody>
+          </table>
+          {/* </div> */}
         </div>
       </div>
     );
