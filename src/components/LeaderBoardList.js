@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import LeaderBoard from './LeaderBoard';
-const LEADER_TYPE_ADDITIONS = 'additions';
-const LEADER_TYPE_DELETIONS = 'deletions';
-const LEADER_TYPE_COMMITS = 'commits';
-const LEADER_TYPE_RECENTLY_ADDED = 'recentlyAdded';
+import {
+  LEADER_TYPE_ADDITIONS,
+  LEADER_TYPE_DELETIONS,
+  LEADER_TYPE_COMMITS,
+  LEADER_TYPE_RECENTLY_ADDED
+} from '../constants';
 
 export default class LeaderBoardList extends Component {
   render() {

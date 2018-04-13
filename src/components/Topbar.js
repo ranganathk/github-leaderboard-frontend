@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import TopbarItem from './TopbarItem';
-const ORGANIZATION_TOTAL_ADDITIONS_COLOR = 'primary';
-const ORGANIZATION_TOTAL_DELETIONS_COLOR = 'green';
-const ORGANIZATION_TOTAL_COMMITS_COLOR = 'red';
-const LEADER_TYPE_ADDITIONS = 'additions';
-const LEADER_TYPE_DELETIONS = 'deletions';
-const LEADER_TYPE_COMMITS = 'commits';
-// const LEADER_TYPE_RECENTLY_ADDED = 'recentlyAdded';
-// const ORGANIZATION_TOTAL_RECENTLY_ADDED_COLOR = 'green';
+import {
+  ORGANIZATION_TOTAL_ADDITIONS_COLOR,
+  ORGANIZATION_TOTAL_DELETIONS_COLOR,
+  ORGANIZATION_TOTAL_COMMITS_COLOR,
+  LEADER_TYPE_ADDITIONS,
+  LEADER_TYPE_DELETIONS,
+  LEADER_TYPE_COMMITS
+} from '../constants';
 
 export default class Topbar extends Component {
   render() {
