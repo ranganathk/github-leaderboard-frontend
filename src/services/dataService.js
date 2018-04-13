@@ -1,6 +1,6 @@
 import axios from 'axios';
 // const BACKEND_URL = 'https://87362fcb.ngrok.io/github/getAllStats?userToken=';
-const BACKEND_URL = 'https://summer-sea-929.getsandbox.com';
+const BACKEND_URL = 'http://ghlb.us-east-2.elasticbeanstalk.com';
 const TOKEN_NAME = 'githubAccessToken';
 
 export default class DataService {
@@ -18,7 +18,7 @@ export default class DataService {
 
   static getData = async () => {
     const token = DataService.isLoggedIn();
-    const url = `${BACKEND_URL}/getAllStats`;
+    const url = `${BACKEND_URL}/github/getAllStats`;
     // const url = `${BACKEND_URL}${token}`;
     return await axios.get(url);
   };

@@ -1,6 +1,9 @@
 import React from 'react';
-const href =
-  'https://github.com/login/oauth/authorize?client_id=0082b07a83cce83b50f6&redirect_uri=https%3A%2F%2F87362fcb.ngrok.io%2Fusers%2Flogin&scope=user%20repo&state=crypto_nonce';
+const redirect_url = encodeURI(
+  'http://ghlb.us-east-2.elasticbeanstalk.com/users/login'
+);
+
+const href = `https://github.com/login/oauth/authorize?client_id=0082b07a83cce83b50f6&redirect_uri=${redirect_url}&scope=user%20repo&state=crypto_nonce`;
 
 const Login = () => (
   <div className="container">
