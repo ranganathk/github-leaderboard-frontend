@@ -2,14 +2,10 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
 export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.logout = this.logout.bind(this);
-  }
-  logout() {
+  logout = () => {
     this.props.history.push('/');
     this.props.logoutUser();
-  }
+  };
   render() {
     return (
       <div className="container">
