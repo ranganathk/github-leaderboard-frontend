@@ -22,6 +22,7 @@ export default class LeaderBoard extends Component {
   }
 
   sortLeaderBoardData = (data, type, order) => {
+    if (!data) return data;
     return data.sort((item1, item2) => {
       if (!item1.stats[type] && !item2.stats[type]) {
         return 0;
