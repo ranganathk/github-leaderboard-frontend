@@ -8,39 +8,36 @@ export default class Header extends Component {
   };
   render() {
     return (
-      <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a className="navbar-brand" href="/">
-            My Scorer
-          </a>
-          <ul
-            className="navbar-nav mr-auto pull-right"
-            style={{ listStyleType: 'none' }}
-          >
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        style={{ backgroundColor: '#273748' }}
+      >
+        <a className="navbar-brand" href="#">
+          <i className="fab fa-github" /> Code Astra
+        </a>
+
+        <div
+          className="collapse navbar-collapse pull-right"
+          id="navbarSupportedContent"
+        >
+          <ul className="navbar-nav mr-auto" style={{ listStyleType: 'none' }}>
             <li className="nav-item dropdown">
-              <button
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Dropdown
-              </button>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <NavLink to="/">Home</NavLink>
-                <div className="dropdown-divider" />
-                <NavLink to="/add-token">Add Token</NavLink>
-                <div className="dropdown-divider" />
-                <div onClick={this.logout} className="dropdown-item">
-                  Logout
+              <NavLink to="/add-token">
+                <i className="fa fa-add-alt" style={{ fontSize: 20 }} />
+              </NavLink>
+              <a onClick={this.props.logoutUser}>
+                <div style={{ padding: 15 }}>
+                  <i
+                    className="fa fa-sign-out-alt"
+                    style={{ fontSize: 20 }}
+                    onClick={this.props.logoutUser}
+                  />
                 </div>
-              </div>
+              </a>
             </li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     );
   }
 }

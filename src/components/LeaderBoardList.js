@@ -7,32 +7,43 @@ import {
   LEADER_TYPE_RECENTLY_ADDED
 } from '../constants';
 
+const styles = {
+  tableContainer: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  table: {
+    marginLeft: '40px',
+    marginRight: '40px',
+    minWidth: '300px'
+  }
+};
 export default class LeaderBoardList extends Component {
   render() {
     return (
-      <div>
-        <div className="col-md-6">
+      <div style={styles.tableContainer}>
+        <div className="" style={styles.table}>
           <LeaderBoard
             {...this.props}
             type={LEADER_TYPE_ADDITIONS}
             order="desc"
           />
         </div>
-        <div className="col-md-6">
+        <div className="" style={styles.table}>
           <LeaderBoard
             {...this.props}
             type={LEADER_TYPE_DELETIONS}
             order="desc"
           />
         </div>
-        <div className="col-md-6">
+        <div className="" style={styles.table}>
           <LeaderBoard
             {...this.props}
             type={LEADER_TYPE_COMMITS}
             order="desc"
           />
         </div>
-        <div className="col-md-6">
+        <div className="" style={styles.table}>
           <LeaderBoard
             {...this.props}
             type={LEADER_TYPE_RECENTLY_ADDED}

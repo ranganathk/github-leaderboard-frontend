@@ -3,7 +3,7 @@ import AddTokenInfo from './AddTokenInfo';
 import AddTokenForm from './AddTokenForm';
 
 const AddToken = () => (
-  <div className="row">
+  <div className="row token-page">
     <div className="col-md-6">
       <AddTokenInfo />
     </div>

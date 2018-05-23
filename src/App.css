@@ -1,3 +1,7 @@
+body {
+  background-color: #202938;
+}
+
 .App {
   text-align: center;
 }
@@ -30,3 +34,25 @@
     transform: rotate(360deg);
   }
 }
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #192430;
+}
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th {
+  background-color: #192430;
+}
+
+.table > tbody > tr > td {
+  border: none;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.token-page {
+  color: white;
+}
+
+/*twitter color:  #192430 */

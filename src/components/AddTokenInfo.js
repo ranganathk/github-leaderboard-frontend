@@ -10,18 +10,20 @@ const AddTokenInfo = () => (
     </p>
     <h2>How to generate an access token?</h2>
     <ul className="list-group">
-      <li className="list-group-item">Go to your github user settings.</li>
-      <li className="list-group-item">
+      <li className="transparent list-group-item">
+        Go to your github user settings.
+      </li>
+      <li className="transparent list-group-item">
         Click on Developer settings in the bottom left.
       </li>
-      <li className="list-group-item">
+      <li className="transparent list-group-item">
         Click on 'personal access tokens' link
       </li>
-      <li className="list-group-item">
+      <li className="transparent list-group-item">
         Provide a description and generate a token with the necessary access
         permissions.
       </li>
-      <li className="list-group-item">
+      <li className="transparent list-group-item">
         Copy the 40 character alpha-numeric string and paste it here.
       </li>
     </ul>
