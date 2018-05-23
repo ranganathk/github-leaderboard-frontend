@@ -11,7 +11,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { loggedIn: true, data: [] };
+    this.state = { loggedIn: false, data: [] };
   }
 
   async componentWillMount() {
