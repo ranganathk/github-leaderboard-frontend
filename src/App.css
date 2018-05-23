@@ -53,6 +53,9 @@ body {
 
 .token-page {
   color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /*twitter color:  #192430 */
