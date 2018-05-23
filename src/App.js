@@ -4,6 +4,7 @@ import './App.css';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import DataService from './services/dataService';
+import UsersList from './components/UsersList';
 
 class App extends Component {
   constructor(props) {
@@ -38,6 +39,9 @@ class App extends Component {
         )}
       </div>
     );
+    // return (
+    //   <div>{this.state.data && <UsersList userData={this.state.data} />}</div>
+    // );
   }
 }
 
