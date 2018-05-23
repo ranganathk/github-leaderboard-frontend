@@ -4,7 +4,9 @@ const TEXT_COLOR = '#FFFFFF';
 const styles = {
   avatar: {
     width: '35px',
-    height: '35px'
+    height: '35px',
+    position: 'relative',
+    zIndex: '3'
   },
   name: {
     fontSize: '22px',
@@ -30,10 +32,11 @@ const styles = {
   },
   crown: {
     position: 'absolute',
-    top: -25,
-    left: 4,
-    fontSize: 25,
-    color: 'goldenrod'
+    top: -14,
+    left: 8,
+    fontSize: 20,
+    color: 'goldenrod',
+    zIndex: '2'
   }
 };
 
@@ -49,7 +52,7 @@ const medalColor = rank => {
 
 const LeaderBoardCell = props => (
   <tr className="even gradeC" key={props.login}>
-    <td style={styles.userCell}>
+    <td style={{ ...styles.userCell, paddingTop: props.rank === 0 ? 20 : 15 }}>
       <div style={{ position: 'relative' }}>
         <img className="img-circle" src={props.avatar} style={styles.avatar} />
         {props.rank === 0 && (
