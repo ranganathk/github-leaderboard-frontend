@@ -1,7 +1,10 @@
 import axios from 'axios';
 // const BACKEND_URL = 'https://87362fcb.ngrok.io/github/getAllStats?userToken=';
 const BACKEND_URL =
-  'http://github-leaderboard-backend-dev.ap-south-1.elasticbeanstalk.com/github/getAllStats?userToken=';
+  'http://github-leaderboard-backend-dev.ap-south-1.elasticbeanstalk.com/';
+const GET_STATS_ENDPOINT = 'github/getAllStats?userToken={uToken}';
+const SAVE_TOKEN_ENDPOINT = 'users/saveToken';
+
 const TOKEN_NAME = 'githubAccessToken';
 
 export default class DataService {
@@ -21,14 +24,17 @@ export default class DataService {
     const token = DataService.isLoggedIn();
     const headers = { token };
     // const url = `${BACKEND_URL}/github/getAllStats`;
-    const url = `${BACKEND_URL}${token}`;
-    return await axios.get(url);
+    const url = BACKEND_URL + GET_STATS_ENDPOINT;
+    return await axios.get(url.replace('{uToken}', token));
   };
 
-  static sendOrganizationToken = async token => {
-    const url = `${BACKEND_URL}/saveToken`;
+  static saveUserToken = async userToken => {
+    const url = BACKEND_URL + SAVE_TOKEN_ENDPOINT;
+    const accessToken = DataService.isLoggedIn();
+    console.log(accessToken);
     return await axios.post(url, {
-      token
+      accessToken,
+      userToken
     });
   };
 }
