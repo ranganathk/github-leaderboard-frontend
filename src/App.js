@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div className="container">
+          <div>
             {this.state.loggedIn && (
               <Route
                 render={props => (
