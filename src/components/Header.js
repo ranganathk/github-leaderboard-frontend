@@ -23,8 +23,12 @@ export default class Header extends Component {
           <ul className="navbar-nav mr-auto" style={{ listStyleType: 'none' }}>
             <li className="nav-item dropdown">
               <NavLink to="/add-token">
-                <i className="fa fa-add-alt" style={{ fontSize: 20 }} />
+                <div style={{ padding: 15 }}>
+                  <i className="fa fa-plus" style={{ fontSize: 20 }} />
+                </div>
               </NavLink>
+            </li>
+            <li>
               <a onClick={this.props.logoutUser}>
                 <div style={{ padding: 15 }}>
                   <i
