@@ -24,16 +24,21 @@ export default class TopbarItem extends Component {
   }
 
   render() {
+    const { iconName } = this.props;
+    const iconClassName = `fa ${iconName} fa-5x`;
     return (
-      <div className="col-lg-3 col-md-6">
-        <div className={'panel panel-' + this.props.color}>
+      <div className={'col-lg-3 col-md-6'}>
+        <div className={'bg-' + this.props.color}>
           <div className="panel-heading">
             <div className="row">
               <div className="col-xs-3">
-                <i className="fa fa-comments fa-5x" />
+                <i className={iconClassName} />
+                {/* <ion-icon name="git-commit" style={{ fontSize: 24 }} /> */}
               </div>
               <div className="col-xs-9 text-right">
-                <div className="huge">{this.state.total}</div>
+                <div className="huge" style={{ fontSize: '24px' }}>
+                  {this.state.total}
+                </div>
                 <div>{this.props.type}</div>
               </div>
             </div>

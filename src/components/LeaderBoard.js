@@ -5,8 +5,9 @@ const styles = {
   header: {
     fontSize: '24px',
     fontWeight: '500',
-    color: '#333',
-    backgroundColor: 'rgba(173, 188, 204, 0.3)'
+    color: '#fff',
+    backgroundColor: '#009FEE',
+    border: 'none'
   },
   panel: {
     border: '0px'

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import TopbarItem from './TopbarItem';
-const ORGANIZATION_TOTAL_ADDITIONS_COLOR = 'primary';
-const ORGANIZATION_TOTAL_DELETIONS_COLOR = 'green';
-const ORGANIZATION_TOTAL_COMMITS_COLOR = 'red';
+const ORGANIZATION_TOTAL_ADDITIONS_COLOR = 'success';
+const ORGANIZATION_TOTAL_DELETIONS_COLOR = 'danger';
+const ORGANIZATION_TOTAL_COMMITS_COLOR = 'primary';
 const LEADER_TYPE_ADDITIONS = 'additions';
 const LEADER_TYPE_DELETIONS = 'deletions';
 const LEADER_TYPE_COMMITS = 'commits';
@@ -24,16 +24,19 @@ export default class Topbar extends Component {
         <TopbarItem
           color={ORGANIZATION_TOTAL_ADDITIONS_COLOR}
           type={LEADER_TYPE_ADDITIONS}
+          iconName={'fa-plus'}
           {...this.props}
         />
         <TopbarItem
           color={ORGANIZATION_TOTAL_DELETIONS_COLOR}
           type={LEADER_TYPE_DELETIONS}
+          iconName={'fa-minus'}
           {...this.props}
         />
         <TopbarItem
           color={ORGANIZATION_TOTAL_COMMITS_COLOR}
           type={LEADER_TYPE_COMMITS}
+          iconName={'fa-code'}
           {...this.props}
         />
         {/* <div className="col-lg-3 col-md-6">

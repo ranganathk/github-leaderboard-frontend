@@ -1,13 +1,13 @@
 import React from 'react';
 
-const TEXT_COLOR = '#2A2F3C';
+const TEXT_COLOR = '#FFFFFF';
 const styles = {
   avatar: {
     width: '35px',
     height: '35px'
   },
   name: {
-    fontSize: '18px',
+    fontSize: '22px',
     paddingLeft: '5px',
     paddingRight: '3px',
     color: TEXT_COLOR,

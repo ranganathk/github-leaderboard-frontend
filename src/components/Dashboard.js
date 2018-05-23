@@ -6,7 +6,8 @@ import LeaderBoardList from './LeaderBoardList';
 const styles = {
   header: {
     color: 'white',
-    fontSize: '40px'
+    fontSize: '40px',
+    borderBottom: 'none'
   }
 };
 export default class Dashboard extends Component {
@@ -17,7 +18,7 @@ export default class Dashboard extends Component {
         <div className="container">
           {/* <div> */}
           <h1 className="page-header" style={styles.header}>
-            Dashboard
+            Github Leaderboard
           </h1>
           <Topbar {...this.props} />
           <LeaderBoardList {...this.props} />

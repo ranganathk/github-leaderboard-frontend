@@ -3,9 +3,12 @@ import React, { Component } from 'react';
 export default class Header extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        style={{ backgroundColor: '#273748' }}
+      >
         <a className="navbar-brand" href="#">
-          My Scorer
+          <i class="fab fa-github" /> Code Astra
         </a>
 
         <div
@@ -23,7 +26,20 @@ export default class Header extends Component {
               >
                 Dropdown
               </button> */}
-              <button onClick={this.props.logoutUser}>Logout</button>
+              <a onClick={this.props.logoutUser}>
+                <div style={{ padding: 15 }}>
+                  <i
+                    className="fa fa-sign-out-alt"
+                    style={{ fontSize: 20 }}
+                    onClick={this.props.logoutUser}
+                  />
+                </div>
+              </a>
+              {/* <button
+                onClick={this.props.logoutUser}
+                style={{ backgroundColor: 'transparent', border: 'none' }}
+              >
+              </button> */}
               {/* <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a className="dropdown-item" >
                   Logout
