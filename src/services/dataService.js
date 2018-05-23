@@ -1,6 +1,7 @@
 import axios from 'axios';
 // const BACKEND_URL = 'https://87362fcb.ngrok.io/github/getAllStats?userToken=';
-const BACKEND_URL = 'http://ghlb.us-east-2.elasticbeanstalk.com';
+const BACKEND_URL =
+  'http://githubleaderboard-env.m64nbdmrrf.us-east-2.elasticbeanstalk.com/';
 const TOKEN_NAME = 'githubAccessToken';
 
 export default class DataService {
