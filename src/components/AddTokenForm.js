@@ -22,7 +22,7 @@ export default class AddTokenForm extends Component {
 
   submitToken = async ev => {
     ev.preventDefault();
-    const resp = await DataService.sendOrganizationToken(this.state.token);
+    const resp = await DataService.saveUserToken(this.state.token);
     document.getElementById('submit-token-form').reset();
     this.setState(() => ({ token: '' }));
   };
