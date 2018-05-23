@@ -15,9 +15,9 @@ class App extends Component {
   }
 
   async componentWillMount() {
-    // const url = new URL(window.location.href);
-    // const token = url.searchParams.get('userToken') || DataService.isLoggedIn();
-    const token = true;
+    const url = new URL(window.location.href);
+    const token = url.searchParams.get('userToken') || DataService.isLoggedIn();
+    // const token = true;
     if (token) {
       this.setState(() => ({ loggedIn: true }));
       DataService.setLoggedIn(token);
