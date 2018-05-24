@@ -57,7 +57,7 @@ export default class AddTokenForm extends Component {
           >
             Cancel
           </button> */}
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" disabled={!this.state.token} className="btn btn-primary">
             Submit
           </button>
         </form>
