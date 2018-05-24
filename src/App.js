@@ -37,9 +37,6 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          {
-            this.state.redirect && <Redirect to="/" />
-          }
           <div>
             {this.state.loggedIn && (
               <Route
@@ -49,6 +46,9 @@ class App extends Component {
               />
             )}
             <Switch>
+              {/* {
+                this.state.redirect && <Redirect to="/" />
+              } */}
               {this.state.loggedIn ? (
                 <Route
                   path="/"
