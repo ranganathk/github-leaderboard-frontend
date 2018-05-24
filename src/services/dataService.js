@@ -2,7 +2,7 @@ import axios from 'axios';
 // const BACKEND_URL = 'https://87362fcb.ngrok.io/github/getAllStats?userToken=';
 const BACKEND_URL =
   'http://github-leaderboard-backend-dev.ap-south-1.elasticbeanstalk.com/';
-const GET_STATS_ENDPOINT = 'github/getAllStats?userToken={uToken}';
+const GET_STATS_ENDPOINT = 'github/getAllStats?accessToken={uToken}';
 const SAVE_TOKEN_ENDPOINT = 'users/saveToken';
 
 const TOKEN_NAME = 'githubAccessToken';
