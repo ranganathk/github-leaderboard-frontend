@@ -31,7 +31,6 @@ export default class DataService {
   static saveUserToken = async userToken => {
     const url = BACKEND_URL + SAVE_TOKEN_ENDPOINT;
     const accessToken = DataService.isLoggedIn();
-    console.log(accessToken);
     return await axios.post(url, {
       accessToken,
       userToken

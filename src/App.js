@@ -6,12 +6,12 @@ import Dashboard from './components/Dashboard';
 import AddToken from './components/AddToken';
 import Header from './components/Header';
 import DataService from './services/dataService';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { loggedIn: false, data: [] };
+    this.state = { loggedIn: false, data: [], redirect: false };
   }
 
   async componentWillMount() {
@@ -20,10 +20,11 @@ class App extends Component {
       url.searchParams.get('accessToken') || DataService.isLoggedIn();
     // const token = true;
     if (token) {
-      this.setState(() => ({ loggedIn: true }));
+      this.setState({ loggedIn: true });
       DataService.setLoggedIn(token);
       const resp = await DataService.getData();
-      this.setState(() => ({ data: resp.data }));
+      this.setState({ data: resp.data, redirect: true });
+
     }
   }
 
@@ -33,6 +34,9 @@ class App extends Component {
   };
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to='/' />;
+    }
     return (
       <div className="App">
         <BrowserRouter>
