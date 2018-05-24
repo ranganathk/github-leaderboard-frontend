@@ -12,9 +12,11 @@ export default class Header extends Component {
         className="navbar navbar-expand-lg navbar-light bg-light"
         style={{ backgroundColor: '#273748' }}
       >
-        <a className="navbar-brand" href="#">
-          <i className="fab fa-github" /> Code Astra
-        </a>
+        <NavLink to='/'>
+          <a className="navbar-brand" href="#">
+            <i className="fab fa-github" /> Code Astra
+          </a>
+        </NavLink>
 
         <div
           className="collapse navbar-collapse pull-right"
