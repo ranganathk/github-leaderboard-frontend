@@ -57,16 +57,18 @@ export default class AddTokenForm extends Component {
           >
             Cancel
           </button> */}
-          {this.state.status === SUCCESS && <small>
-              Successfully updated
-            </small>}
-
-          {this.state.status === FAILURE && <small>
-              Failed to update. Please try again.
-            </small>}
           <button type="submit" disabled={!this.state.token} className="btn btn-primary">
             Submit
           </button>
+          <div>
+            {this.state.status === SUCCESS && <small>
+              Successfully updated
+                </small>}
+
+            {this.state.status === FAILURE && <small>
+              Failed to update. Please try again.
+                </small>}
+          </div>
         </form>
       </div>;
   }
