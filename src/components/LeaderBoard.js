@@ -22,7 +22,7 @@ export default class LeaderBoard extends Component {
   }
 
   sortLeaderBoardData = (data, type, order) => {
-    if (!data) return data;
+    if (!data || !Array.isArray(data)) return data;
     return data.sort((item1, item2) => {
       if (!item1.stats[type] && !item2.stats[type]) {
         return 0;
@@ -32,8 +32,8 @@ export default class LeaderBoard extends Component {
         return order === 'asc' ? 1 : -1;
       } else {
         return order === 'asc'
-          ? item2.stats[type] - item1.stats[type]
-          : item1.stats[type] - item2.stats[type];
+          ? item1.stats[type] - item2.stats[type]
+          : item2.stats[type] - item1.stats[type];
       }
     });
   };
