@@ -29,7 +29,7 @@ export default class AddTokenForm extends Component {
 
   render() {
     return (
-      <div className="col-md-6">
+      <div className="col-md-6 col-md-offset-3">
         <form id="submit-token-form" onSubmit={this.submitToken}>
           <div className="form-group">
             <label>Add your repository token</label>
@@ -37,14 +37,26 @@ export default class AddTokenForm extends Component {
               className="form-control"
               onChange={this.updateToken}
               placeholder="TOKEN"
+              style={{
+                'background-color': 'transparent',
+                color: 'white',
+                'border-color': 'grey'
+              }}
             />
             <small id="emailHelp" className="form-text text-muted">
               We'll never share your token with anyone else.
             </small>
           </div>
-          <button type="cancel" onClick={this.clearToken}>
+          {/* <button
+            type="cancel"
+            onClick={this.clearToken}
+            style={{
+              'background-color': 'transparent',
+              'border-style': 'none'
+            }}
+          >
             Cancel
-          </button>
+          </button> */}
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
