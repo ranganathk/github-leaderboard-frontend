@@ -62,16 +62,17 @@ export default class LeaderBoard extends Component {
             id="dataTables-example"
           >
             <tbody>
-              {this.state.sortedData.map((item, index) => (
-                <LeaderBoardCell
-                  avatar={item.profile.avatar_url}
-                  name={item.profile.login}
-                  value={item.stats[this.props.type]}
-                  label={this.props.type}
-                  key={item.profile.login}
-                  rank={index}
-                />
-              ))}
+              {this.state.sortedData &&
+                this.state.sortedData.map((item, index) => (
+                  <LeaderBoardCell
+                    avatar={item.profile.avatar_url}
+                    name={item.profile.login}
+                    value={item.stats[this.props.type]}
+                    label={this.props.type}
+                    key={item.profile.login}
+                    rank={index}
+                  />
+                ))}
             </tbody>
           </table>
           {/* </div> */}

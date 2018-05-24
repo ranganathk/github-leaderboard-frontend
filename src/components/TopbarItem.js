@@ -9,7 +9,7 @@ export default class TopbarItem extends Component {
   }
 
   computeTotalData = (data, type) => {
-    if (!data) return 0;
+    if (!data || !Array.isArray(data)) return 0;
     return data.reduce((accumulator, item) => {
       if (item.stats[type]) {
         return accumulator + item.stats[type];
