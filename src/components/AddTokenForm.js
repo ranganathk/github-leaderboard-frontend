@@ -32,11 +32,11 @@ export default class AddTokenForm extends Component {
       <div className="col-md-6 col-md-offset-3">
         <form id="submit-token-form" onSubmit={this.submitToken}>
           <div className="form-group">
-            <label>Add your repository token</label>
+            <label>Personal token</label>
             <input
               className="form-control"
               onChange={this.updateToken}
-              placeholder="TOKEN"
+              placeholder="Paste your token here"
               style={{
                 'background-color': 'transparent',
                 color: 'white',
