@@ -34,12 +34,12 @@ class App extends Component {
   };
 
   render() {
-    if (this.state.redirect) {
-      return <Redirect to='/' />;
-    }
     return (
       <div className="App">
         <BrowserRouter>
+          {
+            this.state.redirect && <Redirect to="/" />
+          }
           <div>
             {this.state.loggedIn && (
               <Route
