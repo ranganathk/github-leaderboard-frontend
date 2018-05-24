@@ -63,7 +63,7 @@ export default class LeaderBoard extends Component {
             id="dataTables-example"
           >
             <tbody>
-              {this.state.sortedData ? (
+              {this.state.sortedData && !this.props.fetchingData ? (
                 this.state.sortedData.map((item, index) => (
                   <LeaderBoardCell
                     avatar={item.profile.avatar_url}
