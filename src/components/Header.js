@@ -45,7 +45,7 @@ export default class Header extends Component {
                 />
               </div>
             </li>
-            <li className="nav-item dropdown" title="Add Tken">
+            <li className="nav-item dropdown" title="Add Token">
               <NavLink to="/add-token">
                 <div style={{ padding: 15 }}>
                   <i className="fa fa-plus" style={{ fontSize: 20 }} />
