@@ -38,7 +38,7 @@ export default class TopbarItem extends Component {
               </div>
               <div className="col-xs-9 text-right">
                 <div className="huge" style={{ fontSize: '24px' }}>
-                  {this.state.total}
+                  {this.state.total.toLocaleString()}
                 </div>
                 <div>{this.props.type}</div>
               </div>
