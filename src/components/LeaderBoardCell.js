@@ -69,7 +69,7 @@ const LeaderBoardCell = props => (
     </td>
     <td style={styles.countCell}>
       <span style={styles.count}>
-        {props.value || '-'} {props.type}
+        {props.value >= 0 ? props.value : '-'} {props.type}
       </span>
     </td>
   </tr>

@@ -43,13 +43,13 @@ export default class LeaderBoardList extends Component {
             order="desc"
           />
         </div>
-        <div className="" style={styles.table}>
+        {/* <div className="" style={styles.table}>
           <LeaderBoard
             {...this.props}
             type={LEADER_TYPE_RECENTLY_ADDED}
             order="desc"
           />
-        </div>
+        </div> */}
       </div>
     );
   }

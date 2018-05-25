@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import SelectTimePeriod from './SelectTimePeriod';
 export default class Header extends Component {
   logout = () => {
     this.props.history.push('/');
@@ -12,7 +13,7 @@ export default class Header extends Component {
         className="navbar navbar-expand-lg navbar-light bg-light"
         style={{ backgroundColor: '#273748' }}
       >
-        <NavLink to='/'>
+        <NavLink to="/">
           <a className="navbar-brand" href="#">
             <i className="fab fa-github" /> Code Astra
           </a>
@@ -23,6 +24,20 @@ export default class Header extends Component {
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav mr-auto" style={{ listStyleType: 'none' }}>
+            <li className="nav-item dropdown">
+              <div
+                style={{ padding: 15, paddingRight: 40, flexDirection: 'row' }}
+              >
+                <i
+                  className="far fa-clock"
+                  style={{ fontSize: 20, color: '#337ab7' }}
+                />
+                <SelectTimePeriod
+                  timePeriod={this.props.timePeriod}
+                  updateTimePeriod={this.props.updateTimePeriod}
+                />
+              </div>
+            </li>
             <li className="nav-item dropdown">
               <NavLink to="/add-token">
                 <div style={{ padding: 15 }}>

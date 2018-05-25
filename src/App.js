@@ -11,7 +11,15 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { loggedIn: false, data: [], redirect: false };
+    this.updateTimePeriod = this.updateTimePeriod.bind(this);
+    this.updateData = this.updateData.bind(this);
+    this.state = {
+      loggedIn: false,
+      data: [],
+      fetchingData: false,
+      redirect: false,
+      timePeriod: 'WEEK'
+    };
   }
 
   async componentWillMount() {
@@ -22,16 +30,25 @@ class App extends Component {
     if (token) {
       this.setState({ loggedIn: true });
       DataService.setLoggedIn(token);
-      const resp = await DataService.getData();
+      const resp = await DataService.getData(this.state.timePeriod);
       this.setState({ data: resp.data, redirect: true });
-
     }
+  }
+
+  async updateData() {
+    this.setState({ fetchingData: true });
+    const resp = await DataService.getData(this.state.timePeriod);
+    this.setState({ data: resp.data, redirect: true, fetchingData: false });
   }
 
   logoutUser = () => {
     DataService.logout();
     this.setState(() => ({ loggedIn: false }));
   };
+
+  updateTimePeriod(timePeriod) {
+    this.setState({ timePeriod }, () => this.updateData());
+  }
 
   render() {
     return (
@@ -41,7 +58,11 @@ class App extends Component {
             {this.state.loggedIn && (
               <Route
                 render={props => (
-                  <Header logoutUser={this.logoutUser} {...props} />
+                  <Header
+                    logoutUser={this.logoutUser}
+                    updateTimePeriod={this.updateTimePeriod}
+                    {...props}
+                  />
                 )}
               />
             )}
@@ -54,7 +75,11 @@ class App extends Component {
                   path="/"
                   exact={true}
                   render={props => (
-                    <Dashboard data={this.state.data} {...props} />
+                    <Dashboard
+                      data={this.state.data}
+                      fetchingData={this.state.fetchingData}
+                      {...props}
+                    />
                   )}
                 />
               ) : (

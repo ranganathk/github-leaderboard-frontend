@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LeaderBoardCell from './LeaderBoardCell';
+import Loader from './Loader';
 
 const styles = {
   header: {
@@ -17,12 +18,12 @@ export default class LeaderBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sortedData: []
+      sortedData: null
     };
   }
 
   sortLeaderBoardData = (data, type, order) => {
-    if (!data || !Array.isArray(data)) return data;
+    if (!data || !Array.isArray(data)) return null;
     return data.sort((item1, item2) => {
       if (!item1.stats[type] && !item2.stats[type]) {
         return 0;
@@ -62,7 +63,7 @@ export default class LeaderBoard extends Component {
             id="dataTables-example"
           >
             <tbody>
-              {this.state.sortedData &&
+              {this.state.sortedData && !this.props.fetchingData ? (
                 this.state.sortedData.map((item, index) => (
                   <LeaderBoardCell
                     avatar={item.profile.avatar_url}
@@ -72,7 +73,12 @@ export default class LeaderBoard extends Component {
                     key={item.profile.login}
                     rank={index}
                   />
-                ))}
+                ))
+              ) : (
+                <tr className="even gradeC">
+                  <Loader />
+                </tr>
+              )}
             </tbody>
           </table>
           {/* </div> */}
