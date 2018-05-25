@@ -25,11 +25,17 @@ export default class LeaderBoard extends Component {
   sortLeaderBoardData = (data, type, order) => {
     if (!data || !Array.isArray(data)) return null;
     return data.sort((item1, item2) => {
-      if (!item1.stats[type] && !item2.stats[type]) {
+      if (item1.stats[type] === undefined && item2.stats[type] === undefined) {
         return 0;
-      } else if (!item1.stats[type] && item2.stats[type]) {
+      } else if (
+        item1.stats[type] === undefined &&
+        item2.stats[type] !== undefined
+      ) {
         return order === 'asc' ? -1 : 1;
-      } else if (item1.stats[type] && !item2.stats[type]) {
+      } else if (
+        item1.stats[type] !== undefined &&
+        item2.stats[type] === undefined
+      ) {
         return order === 'asc' ? 1 : -1;
       } else {
         return order === 'asc'
