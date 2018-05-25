@@ -26,7 +26,13 @@ export default class Header extends Component {
           <ul className="navbar-nav mr-auto" style={{ listStyleType: 'none' }}>
             <li className="nav-item dropdown">
               <div
-                style={{ padding: 15, paddingRight: 40, flexDirection: 'row' }}
+                style={{
+                  padding: 15,
+                  paddingRight: 40,
+                  flexDirection: 'row',
+                  display: 'flex',
+                  alignItems: 'center'
+                }}
               >
                 <i
                   className="far fa-clock"

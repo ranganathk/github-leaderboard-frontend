@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
   render() {
     return (
       <div id="wrapper">
-        <div className="container">
+        <div className="container-fluid">
           {/* <div> */}
           <h1 className="page-header" style={styles.header}>
             Github Leaderboard

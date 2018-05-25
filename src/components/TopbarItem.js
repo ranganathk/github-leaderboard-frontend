@@ -28,7 +28,7 @@ export default class TopbarItem extends Component {
     const { iconName } = this.props;
     const iconClassName = `fa ${iconName} fa-5x`;
     return (
-      <div className={'col-lg-3 col-md-6'}>
+      <div className={'col-lg-2 col-md-4 col-xs-12'}>
         <div className={'bg-' + this.props.color}>
           <div className="panel-heading">
             <div className="row">

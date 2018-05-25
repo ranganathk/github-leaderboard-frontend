@@ -10,7 +10,8 @@ import {
 const styles = {
   tableContainer: {
     display: 'flex',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    justifyContent: 'center'
   },
   table: {
     marginLeft: '40px',
