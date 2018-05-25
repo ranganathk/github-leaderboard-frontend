@@ -33,6 +33,7 @@ export default class Header extends Component {
                   display: 'flex',
                   alignItems: 'center'
                 }}
+                title="Select a Time Period."
               >
                 <i
                   className="far fa-clock"
@@ -44,14 +45,14 @@ export default class Header extends Component {
                 />
               </div>
             </li>
-            <li className="nav-item dropdown">
+            <li className="nav-item dropdown" title="Add Tken">
               <NavLink to="/add-token">
                 <div style={{ padding: 15 }}>
                   <i className="fa fa-plus" style={{ fontSize: 20 }} />
                 </div>
               </NavLink>
             </li>
-            <li>
+            <li title="Sign out">
               <a onClick={this.props.logoutUser}>
                 <div style={{ padding: 15 }}>
                   <i
