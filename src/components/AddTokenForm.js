@@ -42,7 +42,7 @@ export default class AddTokenForm extends Component {
         <form id="submit-token-form" onSubmit={this.submitToken}>
           <div className="form-group">
             <label>Personal token</label>
-            <input className="form-control" onChange={this.updateToken} placeholder="Paste your token here" style={{ 'background-color': 'transparent', color: 'white', 'border-color': 'grey' }} />
+            <input className="form-control" onChange={this.updateToken} placeholder="Paste your token here" style={{ 'background-color': 'transparent', color: 'white', 'borderColor': 'grey' }} />
             <small id="emailHelp" className="form-text text-muted">
               We'll never share your token with anyone else.
             </small>
