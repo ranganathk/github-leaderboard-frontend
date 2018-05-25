@@ -14,6 +14,30 @@ const styles = {
     border: '0px'
   }
 };
+
+const sortLeaderBoardData = ({ data, type, order }) => {
+  if (!data || !Array.isArray(data)) return null;
+  return data.sort((item1, item2) => {
+    if (item1.stats[type] === undefined && item2.stats[type] === undefined) {
+      return 0;
+    } else if (
+      item1.stats[type] === undefined &&
+      item2.stats[type] !== undefined
+    ) {
+      return order === 'asc' ? -1 : 1;
+    } else if (
+      item1.stats[type] !== undefined &&
+      item2.stats[type] === undefined
+    ) {
+      return order === 'asc' ? 1 : -1;
+    } else {
+      return order === 'asc'
+        ? item1.stats[type] - item2.stats[type]
+        : item2.stats[type] - item1.stats[type];
+    }
+  });
+};
+
 export default class LeaderBoard extends Component {
   constructor(props) {
     super(props);
@@ -22,37 +46,9 @@ export default class LeaderBoard extends Component {
     };
   }
 
-  sortLeaderBoardData = (data, type, order) => {
-    if (!data || !Array.isArray(data)) return null;
-    return data.sort((item1, item2) => {
-      if (item1.stats[type] === undefined && item2.stats[type] === undefined) {
-        return 0;
-      } else if (
-        item1.stats[type] === undefined &&
-        item2.stats[type] !== undefined
-      ) {
-        return order === 'asc' ? -1 : 1;
-      } else if (
-        item1.stats[type] !== undefined &&
-        item2.stats[type] === undefined
-      ) {
-        return order === 'asc' ? 1 : -1;
-      } else {
-        return order === 'asc'
-          ? item1.stats[type] - item2.stats[type]
-          : item2.stats[type] - item1.stats[type];
-      }
-    });
-  };
-
-  componentWillReceiveProps(props) {
-    const sortedData = this.sortLeaderBoardData(
-      props.data,
-      props.type,
-      props.order
-    );
-
-    this.setState(() => ({ sortedData }));
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const sortedData = sortLeaderBoardData(nextProps);
+    return { sortedData };
   }
 
   render() {

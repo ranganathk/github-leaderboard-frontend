@@ -1,6 +1,44 @@
 import React from 'react';
 
 const TEXT_COLOR = '#FFFFFF';
+
+const medalColor = rank => {
+  if (rank === 0) {
+    return 'gold';
+  }
+  if (rank === 1) {
+    return 'silver';
+  }
+  return '#CD7F32';
+};
+
+const LeaderBoardCell = props => (
+  <tr className="even gradeC" key={props.login}>
+    <td style={{ ...styles.userCell, paddingTop: props.rank === 0 ? 20 : 15 }}>
+      <div style={{ position: 'relative' }}>
+        <img className="img-circle" src={props.avatar} style={styles.avatar} />
+        {props.rank === 0 && (
+          <i className="fas fa-chess-queen" style={styles.crown} />
+        )}
+      </div>
+      <span style={styles.name}>{props.name}</span>
+      {props.rank < 3 && (
+        <i
+          className="fas fa-trophy"
+          style={{ color: medalColor(props.rank), fontSize: 26 }}
+        />
+      )}
+    </td>
+    <td style={styles.countCell}>
+      <span style={styles.count}>
+        {props.value >= 0 ? props.value.toLocaleString() : '-'} {props.type}
+      </span>
+    </td>
+  </tr>
+);
+
+export default LeaderBoardCell;
+
 const styles = {
   avatar: {
     width: '35px',
@@ -39,41 +77,3 @@ const styles = {
     zIndex: '2'
   }
 };
-
-const medalColor = rank => {
-  if (rank === 0) {
-    return 'gold';
-  }
-  if (rank === 1) {
-    return 'silver';
-  }
-  return '#CD7F32';
-};
-
-const LeaderBoardCell = props => (
-  <tr className="even gradeC" key={props.login}>
-    <td style={{ ...styles.userCell, paddingTop: props.rank === 0 ? 20 : 15 }}>
-      <div style={{ position: 'relative' }}>
-        <img className="img-circle" src={props.avatar} style={styles.avatar} />
-        {props.rank === 0 && (
-          <i class="fas fa-chess-queen" style={styles.crown} />
-        )}
-      </div>
-      <span style={styles.name}>{props.name}</span>
-      {props.rank < 3 && (
-        <i
-          class="fas fa-trophy"
-          style={{ color: medalColor(props.rank), fontSize: 26 }}
-        />
-      )}
-    </td>
-    <td style={styles.countCell}>
-      <span style={styles.count}>
-        {props.value >= 0 ? props.value.toLocaleString() : '-'}
-        {props.type}
-      </span>
-    </td>
-  </tr>
-);
-
-export default LeaderBoardCell;

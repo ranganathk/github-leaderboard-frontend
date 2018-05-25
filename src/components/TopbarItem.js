@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 
+const computeTotalData = ({ data, type }) => {
+  if (!data || !Array.isArray(data)) return 0;
+  return data.reduce((accumulator, item) => {
+    if (item.stats[type]) {
+      return accumulator + item.stats[type];
+    } else {
+      return accumulator;
+    }
+  }, 0);
+};
 export default class TopbarItem extends Component {
   constructor(props) {
     super(props);
@@ -8,20 +18,9 @@ export default class TopbarItem extends Component {
     };
   }
 
-  computeTotalData = (data, type) => {
-    if (!data || !Array.isArray(data)) return 0;
-    return data.reduce((accumulator, item) => {
-      if (item.stats[type]) {
-        return accumulator + item.stats[type];
-      } else {
-        return accumulator;
-      }
-    }, 0);
-  };
-
-  componentWillReceiveProps(props) {
-    const total = this.computeTotalData(props.data, props.type);
-    this.setState(() => ({ total }));
+  static getDerivedStateFromProps (nextProps, prevState) {
+    const total = computeTotalData(nextProps);
+    return { total };
   }
 
   render() {
