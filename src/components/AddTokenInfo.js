@@ -20,7 +20,7 @@ const AddTokenInfo = () => (
         Click on 'personal access tokens' link
       </li>
       <li className="transparent list-group-item">
-        Provide a description and generate a token with the necessary access
+        Provide a description and generate a token with the <i>repo</i> scope access
         permissions.
       </li>
       <li className="transparent list-group-item">
