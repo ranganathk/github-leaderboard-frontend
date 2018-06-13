@@ -2,7 +2,7 @@ import React from 'react';
 import LoginHeader from './LoginHeader';
 
 const href =
-  'https://github.com/login/oauth/authorize?client_id=0082b07a83cce83b50f6&redirect_uri=http%3A%2F%2Fgithub-leaderboard-backend-dev.ap-south-1.elasticbeanstalk.com%2Fusers%2Flogin&scope=user%20repo&state=crypto_nonce';
+  'https://github.com/login/oauth/authorize?client_id=0082b07a83cce83b50f6&redirect_uri=https%3A%2F%2Fffa84gt8g5.execute-api.us-east-2.amazonaws.com%2Fproduction%2FuserLogin&scope=user%20repo&state=crypto_nonce';
 const styles = {
   container: {
     marginTop: '30vh'
