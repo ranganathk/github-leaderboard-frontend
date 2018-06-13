@@ -4,7 +4,7 @@ const BACKEND_URL =
   'https://ffa84gt8g5.execute-api.us-east-2.amazonaws.com/production/';
 // const BACKEND_URL =
 // 'http://github-leaderboard-backend-dev.ap-south-1.elasticbeanstalk.com/';
-const GET_STATS_ENDPOINT = 'getAllGithubStats';
+const GET_STATS_ENDPOINT = 'getGithubStats';
 const SAVE_TOKEN_ENDPOINT = 'users/saveToken';
 
 const TOKEN_NAME = 'githubAccessToken';
