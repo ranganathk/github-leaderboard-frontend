@@ -5,7 +5,7 @@ const BACKEND_URL =
 // const BACKEND_URL =
 // 'http://github-leaderboard-backend-dev.ap-south-1.elasticbeanstalk.com/';
 const GET_STATS_ENDPOINT = 'getGithubStats';
-const SAVE_TOKEN_ENDPOINT = 'users/saveToken';
+const SAVE_TOKEN_ENDPOINT = 'saveToken';
 
 const TOKEN_NAME = 'githubAccessToken';
 
